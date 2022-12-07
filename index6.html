@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+
+ <script>
+
+  onload =() => {
+   nome.onchange = () => {
+    console.log(`Nome alterado para ${nome.value}`);
+   };
+   senha.onchange = () => {
+    console.log(`Senha alterada para ${senha.value}`);
+   };
+
+   // onBLur Funcionou, mas não sei se é o mais indicado
+   senha.onblur = () => {
+    if(senha.value==""){
+     alert('Preencha a senha');
+     return false;
+    }
+    return true;
+    };
+   
+
+
+   login.onsubmit = () =>{
+    if(nome.value=="" || senha.value==""){
+     alert('Os campos nome e senha são obrigatórios');
+     return false;
+    }
+    return true;
+    };
+};
+
+ </script>
+</head>
+<body>
+
+ 
+  <h1>JavaScript</h1>
+  <form id="login" action="login.html" > <!--Get deixa exposto na url-->
+  <p>
+  <label for="nome" Nome:>Nome:</label>
+  <input type="text" id="nome" name="nome" />
+  </p>
+  <p>
+  <label for="senha" Nome:>Senha:</label>
+  <input type="password" id="senha" name="senha" />
+  </p>
+  <p>
+  <button type="submit">Enviar</button>
+  </p>
+  </form>
+ 
+ 
+</body>
+</html>
